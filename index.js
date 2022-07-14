@@ -3,7 +3,11 @@ const app = express()
 
 
 app.get("/", (req,res)=>{
-    res.send({data:"hi"})
+    res.send({
+        name:"Hugo",
+        age:17,
+        email:"xxx@gmail.com"
+    })
 })
 
 app.get("/main" , (req,res)=>{
