@@ -20,7 +20,11 @@ app.get("/", (req,res)=>{
 })
 
 app.get("/main" , (req,res)=>{
-    res.send({data:"hi"})
+    res.send({
+        name:"Larissa",
+        age:17,
+        email:"xxx@gmail.com"
+    })
 })
 
 app.listen(5000, () => {
