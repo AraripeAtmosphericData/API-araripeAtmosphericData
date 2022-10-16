@@ -28,12 +28,12 @@ app.get("/",(req,res)=>{
 })
 app.get("/getInfo/", (req,res)=>{
     CubesatData.find().lean().sort({ date: -1 }).then((data) => {
-        res.send( data = {
+        dado = {
             temperatura: data.temperatura,
             pressao: data.pressao,
             bateria: data.bateria
         }
-        )
+        res.send(dado)
     })
 })
 app.post('/saveData', (req, res) => {
