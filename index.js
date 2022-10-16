@@ -28,7 +28,7 @@ app.get("/",(req,res)=>{
 })
 app.get("/getInfo/", (req,res)=>{
     CubesatData.find().lean().sort({ date: -1 }).then((data) => {
-        res.send({
+        res.send( data = {
             temperatura: data.temperatura,
             pressao: data.pressao,
             bateria: data.bateria
