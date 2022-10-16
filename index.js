@@ -24,7 +24,7 @@ const corsOptions ={
 app.use(cors(corsOptions)) // Use this after the variable declaration
 
 app.get("/",(req,res)=>{
-    res.redirect('/saveData')
+    res.send('hi')
 })
 app.get("/getInfo/:name", (req,res)=>{
     let info = req.params.name
