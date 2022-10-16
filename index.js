@@ -2,7 +2,7 @@ const express = require("express")
 const app = express()
 const mongoose = require('mongoose')
 
-require('./models/Rank')
+require('./models/CubesatData')
 const CubesatData = mongoose.model("CubesatData")
 
 
@@ -42,9 +42,9 @@ app.post('/saveData', (req, res) => {
     let pressao =91569.25
     
     const novoDado = {
-                    bateria: bateria,
-                    temperatura: temperatura,
-                    pressao: pressao
+        bateria: bateria,
+        temperatura: temperatura,
+        pressao: pressao
     }
 
     new CubesatData(novoDado).save().then(() => {
