@@ -48,6 +48,7 @@ app.post('/saveData', (req, res) => {
     }
 
     new CubesatData(novoDado).save().then(() => {
+        res.redirect('/')
     })
 })
 
