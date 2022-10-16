@@ -26,14 +26,14 @@ app.use(cors(corsOptions)) // Use this after the variable declaration
 app.get("/",(req,res)=>{
     res.send('hi')
 })
-app.get("/getInfo/:name", (req,res)=>{
-    let info = req.params.name
-    CubesatData.findOne({ nome: info}).then((data) => {
+app.get("/getInfo/", (req,res)=>{
+    CubesatData.find().lean().sort({ date: -1 }).then((data) => {
         res.send({
-            name:data.nome,
-            age:data.maiorRodada,
-            email:data._id
-        })
+            temperatura: data.temperatura,
+            pressao: data.pressao,
+            bateria: data.bateria
+        }
+        )
     })
 })
 app.post('/saveData', (req, res) => {
