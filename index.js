@@ -31,16 +31,16 @@ app.get("/getInfo/", (req,res)=>{
         res.send(data)
     })
 })
-app.post('/saveData/:bateria/:temp/:pressao', (req, res) => {
+app.post('/saveData/:bateria/:temp/:pressao/:alt/:voc/:co2', (req, res) => {
     
     
     let bateria = req.params.bateria
     let temperatura = req.params.temp
-    let pressao = req.params.prssao
+    let pressao = req.params.pressao
     let payload = {
-        altitude: -1000,
-        co2: 10000,
-        voc: 100
+        altitude: req.params.alt,
+        co2: req.params.co2,
+        voc: req.params.voc
     }
     
     const novoDado = {
