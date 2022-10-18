@@ -55,7 +55,7 @@ app.post('/saveData/:bateria/:temp/:pressao/:alt/:voc/:co2', (req, res) => {
     }
 
     new CubesatData(novoDado).save().then(() => {
-        res.redirect('/')
+        res.redirect('back');
     })
 })
 
