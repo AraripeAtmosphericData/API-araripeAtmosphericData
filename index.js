@@ -31,7 +31,7 @@ app.get("/getInfo/", (req,res)=>{
         res.send(data)
     })
 })
-app.post('/saveData/:bateria/:temp/:pressao/:alt/:voc/:co2/:url', (req, res) => {
+app.post('/saveData/:bateria/:temp/:pressao/:alt/:voc/:co2', (req, res) => {
     
     let url = req.params.url
     let bateria = req.params.bateria
@@ -55,7 +55,7 @@ app.post('/saveData/:bateria/:temp/:pressao/:alt/:voc/:co2/:url', (req, res) => 
     }
 
     new CubesatData(novoDado).save().then(() => {
-        res.redirect(`${url}`)
+        res.redirect('/')
     })
 })
 
