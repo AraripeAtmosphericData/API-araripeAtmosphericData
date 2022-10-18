@@ -14,16 +14,6 @@ const cubesatdata = new Schema({
         type: Number,
         require: true
     },
-    giroscopio: {
-        x: Number,
-        y:  Number,
-        z: Number
-      },
-      acelerometro: {
-        x: Number,
-        y:  Number,
-        z: Number
-      },
       payload: {
         altitude: Number,
         co2:  Number,
