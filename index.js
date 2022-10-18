@@ -55,9 +55,21 @@ app.post('/saveData', (req, res) => {
         bateria: bateria,
         temperatura: temperatura,
         pressao: pressao,
-        giroscopio: giroscopio,
-        acelerometro: acelerometro,
-        payload: payload
+        giroscopio: {
+            x: -1000,
+            y: 10000,
+            z: 100
+        },
+        acelerometro: {
+            x: -1000,
+            y: 10000,
+            z: 100
+        },
+        payload: {
+            x: -1000,
+            y: 10000,
+            z: 100
+        }
     }
 
     new CubesatData(novoDado).save().then(() => {
