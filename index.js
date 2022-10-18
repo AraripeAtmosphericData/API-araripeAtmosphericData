@@ -32,6 +32,8 @@ app.get("/getInfo/", (req,res)=>{
     })
 })
 app.post('/saveData', (req, res) => {
+    
+    
     let bateria = 2201
     let temperatura = 28.46352
     let pressao =91569.25
@@ -56,19 +58,19 @@ app.post('/saveData', (req, res) => {
         temperatura: temperatura,
         pressao: pressao,
         giroscopio: {
-            x: -1000,
-            y: 10000,
-            z: 100
+            x: giroscopio.x,
+            y: giroscopio.y,
+            z: giroscopio.z
         },
         acelerometro: {
-            x: -1000,
-            y: 10000,
-            z: 100
+            x: acelerometro.x,
+            y: acelerometro.y,
+            z: acelerometro.z
         },
         payload: {
-            x: -1000,
-            y: 10000,
-            z: 100
+            altitude: payload.altitude,
+            co2: payload.co2,
+            voc: payload.voc
         }
     }
 
