@@ -27,7 +27,7 @@ app.get("/",(req,res)=>{
 })
 app.get("/getInfo/:identificador", (req,res)=>{
     let identificador =req.params.identificador
-    CubesatData.find().sort({identificador:identificador,_id:-1}).limit(1).then((data) => {
+    SensorData.find().sort({identificador:identificador,_id:-1}).limit(1).then((data) => {
         res.send(data)
     })
 })
