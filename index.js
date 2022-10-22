@@ -3,7 +3,7 @@ const app = express()
 const mongoose = require('mongoose')
 
 require('./models/SensorData')
-const sensordatas = mongoose.model("SensorData")
+const sensordatas = mongoose.model("sensordatas")
 
 
 mongoose.Promise = global.Promise
@@ -26,7 +26,7 @@ app.get("/",(req,res)=>{
     res.send('hi')
 })
 app.get("/getInfo", (req,res)=>{
-    sensordatas.find().sort({_id: -_id}).limit(1).then((data) => {
+    sensordatas.find().sort({_id:-_id}).limit(1).then((data) => {
         res.send(data)
     })
 })
