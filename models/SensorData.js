@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
-const cubesatdata = new Schema({
+const sensordata = new Schema({
     bateria: {
         type: Number,
         require: true
@@ -29,4 +29,4 @@ const cubesatdata = new Schema({
     }
 })
 
-mongoose.model("CubesatData",cubesatdata)
+mongoose.model("SensorData",sensordata)

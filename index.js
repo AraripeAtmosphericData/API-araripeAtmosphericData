@@ -26,7 +26,8 @@ app.get("/",(req,res)=>{
     res.send('hi')
 })
 app.get("/getInfo/:identificador", (req,res)=>{
-    CubesatData.find().sort({identificador:req.params.identificador,_id:-1}).limit(1).then((data) => {
+    let identificador =req.params.identificador
+    CubesatData.find().sort({identificador:identificador,_id:-1}).limit(1).then((data) => {
         res.send(data)
     })
 })
