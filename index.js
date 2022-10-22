@@ -25,8 +25,7 @@ app.use(cors(corsOptions))
 app.get("/",(req,res)=>{
     res.send('hi')
 })
-app.get("/getInfo/:identificador", (req,res)=>{
-    let identificador =req.params.identificador
+app.get("/getInfo", (req,res)=>{
     SensorData.find().sort({_id: -_id}).limit(1).then((data) => {
         res.send(data)
     })
