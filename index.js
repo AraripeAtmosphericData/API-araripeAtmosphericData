@@ -7,7 +7,7 @@ const sensordatas = mongoose.model("SensorData")
 
 
 mongoose.Promise = global.Promise
-mongoose.connect("mongodb+srv://a2databaseararipeatmospheric:araripetheonly@a2database.ctnjcnk.mongodb.net/?retryWrites=true&w=majority").then(() => {
+mongoose.connect("mongodb+srv://hugo:96762171@blogapp.m1mhh.mongodb.net/SensorTest?retryWrites=true&w=majority").then(() => {
     console.log('Conectado a database no mongodb')
 }).catch((err) => {
     console.log(err)
