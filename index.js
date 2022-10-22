@@ -27,7 +27,7 @@ app.get("/",(req,res)=>{
 })
 app.get("/getdata/:ind", (req,res)=>{
     let inds = parseFloat(req.params.ind)
-    sensordatas.find({identificador:inds}).sort({_id:-1}).then((data) => {
+    sensordatas.find({identificador:inds}).sort({_id:-1}).limit(1).then((data) => {
         res.send(data)
     })
 })
