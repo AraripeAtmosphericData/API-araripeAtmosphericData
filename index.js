@@ -37,7 +37,7 @@ app.post('/saveData/:identificador/:bateria/:temp/:pressao/:voc/:co2', (req, res
     let temperatura = req.params.temp
     let pressao = req.params.pressao
     let payload = {
-        altitude: (1+1),
+        altitude: (44331.4-(494.62*(pressao**0.190263))),
         co2: req.params.co2,
         voc: req.params.voc
     }
