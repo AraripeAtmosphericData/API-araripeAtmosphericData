@@ -3,7 +3,7 @@ const app = express()
 const mongoose = require('mongoose')
 
 require('./models/SensorData')
-const sensordatas = mongoose.model("sensordatas")
+const sensordatas = mongoose.model("SensorData")
 
 
 mongoose.Promise = global.Promise

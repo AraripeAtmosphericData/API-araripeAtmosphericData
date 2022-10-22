@@ -29,4 +29,4 @@ const sensordata = new Schema({
     }
 })
 
-mongoose.model("sensordatas",sensordata)
+mongoose.model("SensorData",sensordata)
