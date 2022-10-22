@@ -3,7 +3,7 @@ const app = express()
 const mongoose = require('mongoose')
 
 require('./models/SensorData')
-const SensorData = mongoose.model("SensorData")
+const sensordatas = mongoose.model("SensorData")
 
 
 mongoose.Promise = global.Promise
@@ -26,7 +26,7 @@ app.get("/",(req,res)=>{
     res.send('hi')
 })
 app.get("/getInfo", (req,res)=>{
-    SensorData.find().sort({_id: -_id}).limit(1).then((data) => {
+    sensordatas.find().sort({_id: -_id}).limit(1).then((data) => {
         res.send(data)
     })
 })
@@ -53,7 +53,7 @@ app.post('/saveData/:identificador/:bateria/:temp/:pressao/:voc/:co2', (req, res
         identificador:identificador
     }
 
-    new SensorData(novoDado).save().then(() => {
+    new sensordatas(novoDado).save().then(() => {
         res.redirect('back');
     })
 })
