@@ -7,7 +7,7 @@ const SensorData = mongoose.model("SensorData")
 
 
 mongoose.Promise = global.Promise
-mongoose.connect("mongodb+srv://hugo:96762171@blogapp.m1mhh.mongodb.net/ProjCubesat?retryWrites=true&w=majority").then(() => {
+mongoose.connect("mongodb+srv://hugo:96762171@blogapp.m1mhh.mongodb.net/SensorTest?retryWrites=true&w=majority").then(() => {
     console.log('Conectado a database no mongodb')
 }).catch((err) => {
     console.log(err)
@@ -27,7 +27,7 @@ app.get("/",(req,res)=>{
 })
 app.get("/getInfo/:identificador", (req,res)=>{
     let identificador =req.params.identificador
-    SensorData.find().sort({identificador:identificador,_id:-1}).limit(1).then((data) => {
+    SensorData.find().sort({identificador:identificador}).limit(1).then((data) => {
         res.send(data)
     })
 })
