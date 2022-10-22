@@ -25,8 +25,8 @@ app.use(cors(corsOptions))
 app.get("/",(req,res)=>{
     res.send('hi')
 })
-app.get("/getInfo", (req,res)=>{
-    sensordatas.find().sort({_id:-_id}).limit(1).then((data) => {
+app.get("/getdata", (req,res)=>{
+    sensordatas.find().limit(1).sort({$natural:-1}).then((data) => {
         res.send(data)
     })
 })
