@@ -27,7 +27,7 @@ app.get("/",(req,res)=>{
 })
 app.get("/getInfo/:identificador", (req,res)=>{
     let identificador =req.params.identificador
-    SensorData.find().sort({identificador:identificador}).limit(1).then((data) => {
+    SensorData.find().sort({_id: -_id}).limit(1).then((data) => {
         res.send(data)
     })
 })
