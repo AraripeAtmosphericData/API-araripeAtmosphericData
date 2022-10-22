@@ -25,9 +25,9 @@ app.use(cors(corsOptions))
 app.get("/",(req,res)=>{
     res.send('hi')
 })
-app.get("/getdata/:identificador", (req,res)=>{
-    let identificador = req.params.identificador
-    sensordatas.find().limit(1).sort({identificador:identificador,$natural:-1}).then((data) => {
+app.get("/getdata/:ind", (req,res)=>{
+    let inds = req.params.ind
+    sensordatas.find().limit(1).sort({identificador:inds,$natural:-1}).then((data) => {
         res.send(data)
     })
 })
