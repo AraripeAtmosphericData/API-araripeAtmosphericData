@@ -22,6 +22,10 @@ const cubesatdata = new Schema({
     date: {
         type: Date,
         default: Date.now()
+    },
+    identificador: {
+        type: Number,
+        require:true
     }
 })
 
