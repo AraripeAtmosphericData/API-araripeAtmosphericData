@@ -1,6 +1,8 @@
 const express = require("express")
 const app = express()
 const mongoose = require('mongoose')
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
 
 require('./models/SensorData')
 const sensordatas = mongoose.model("SensorData")
@@ -31,21 +33,24 @@ app.get("/getdata/:ind", (req,res)=>{
         res.send(data)
     })
 })
-app.post('/receberJson', function(reqt, res){
+app.post('/receberJson', function(req, res){
+    console.log(request.body);      // your JSON
+   
     const novoDado = {
-        bateria: 0
-        temperatura: 0
-        pressao: 0
+        bateria: 0,
+        temperatura: 0,
+        pressao: 0,
         payload: {
-            altitude: 0
-            co2: 0
+            altitude: 0,
+            co2: 0,
             voc: 0
         },
         identificador:0
     }
+    
 
     new sensordatas(novoDado).save().then(() => {
-        res.redirect('back');
+        response.send(request.body); 
     })
 });
 
