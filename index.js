@@ -34,7 +34,7 @@ app.get("/getdata/:ind", (req,res)=>{
     })
 })
 app.post('/receberJson', function(req, res){
-    console.log(request.body);      // your JSON
+    console.log(req.body);      // your JSON
    
     const novoDado = {
         bateria: 0,
@@ -50,7 +50,7 @@ app.post('/receberJson', function(req, res){
     
 
     new sensordatas(novoDado).save().then(() => {
-        response.send(request.body); 
+        res.send(req.body); 
     })
 });
 
