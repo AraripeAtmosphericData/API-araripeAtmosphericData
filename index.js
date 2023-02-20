@@ -31,8 +31,7 @@ app.get("/getdata/:ind", (req,res)=>{
         res.send(data)
     })
 })
-app.post('/receberJson', function(request, response){
-  console.log(request.body);      // your JSON
+app.post('/receberJson', function(reqt, res){
     const novoDado = {
         bateria: 0
         temperatura: 0
