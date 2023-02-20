@@ -31,6 +31,25 @@ app.get("/getdata/:ind", (req,res)=>{
         res.send(data)
     })
 })
+app.post('/receberJson', function(request, response){
+  console.log(request.body);      // your JSON
+    const novoDado = {
+        bateria: 0
+        temperatura: 0
+        pressao: 0
+        payload: {
+            altitude: 0
+            co2: 0
+            voc: 0
+        },
+        identificador:0
+    }
+
+    new sensordatas(novoDado).save().then(() => {
+        res.redirect('back');
+    })
+});
+
 app.post('/saveData/:identificador/:bateria/:temp/:pressao/:voc/:co2', (req, res) => {
     let identificador = req.params.identificador
     let bateria = req.params.bateria
